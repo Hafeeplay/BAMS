@@ -1,8 +1,6 @@
 'use client';
-
 import { useState } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { FormProps } from '../../shared/types';
+import { FormProps } from '~/shared/types';
 
 const Form = ({
   title,
@@ -15,10 +13,13 @@ const Form = ({
   btnPosition,
   containerClass,
 }: FormProps) => {
-  const [inputValues, setInputValues] = useState([]);
+  const [inputValues, setInputValues] = useState<any>({});
   const [radioBtnValue, setRadioBtnValue] = useState('');
   const [textareaValues, setTextareaValues] = useState('');
   const [checkedState, setCheckedState] = useState<boolean[]>(new Array(checkboxes && checkboxes.length).fill(false));
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Update the value of the entry fields
   const changeInputValueHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,105 +52,142 @@ const Form = ({
     });
   };
 
+  const onFormSubmit = async (e: any) => {
+    e.preventDefault();
+    setLoading(true); // Set loading state to true while submitting form
+    try {
+      const response = await fetch('https://formspree.io/f/mpzveqld', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: inputValues.email,
+          name: inputValues.name,
+          message: textareaValues,
+        }),
+      });
+      if (response.ok) {
+        console.log('Post successful');
+        setFormSubmitted(true);
+      } else {
+        console.error('Post failed');
+        setSubmitError('There was an error. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setSubmitError('There was an error. Please try again later.');
+    }
+    setLoading(false); // Set loading state to false after form submission completes
+  }
+
   return (
-    <form id="contactForm" className={twMerge('', containerClass)}>
-      {title && <h2 className={`${description ? 'mb-2' : 'mb-4'} text-2xl font-bold`}>{title}</h2>}
-      {description && <p className="mb-4">{description}</p>}
-      <div className="mb-6">
-        {/* Inputs */}
-        <div className="mx-0 mb-1 sm:mb-4">
-          {inputs &&
-            inputs.map(({ type, label, name, autocomplete, placeholder }, index) => (
-              <div key={`item-input-${index}`} className="mx-0 mb-1 sm:mb-4">
-                <label htmlFor={name} className="pb-1 text-xs uppercase tracking-wider">
-                  {label}
+    <div className="flex flex-col items-center justify-center">
+      {!formSubmitted ? (
+        <form id="contactForm" className={containerClass} onSubmit={onFormSubmit}>
+          {description && <p className="mb-4">{description}</p>}
+          <div className="mb-6">
+            {/* Inputs */}
+            <div className="mx-0 mb-1 sm:mb-4">
+              {inputs &&
+                inputs.map(({ type, label, name, autocomplete, placeholder }, index) => (
+                  <div key={`item-input-${index}`} className="mx-0 mb-1 sm:mb-4">
+                    <label htmlFor={name} className="pb-1 text-xs uppercase tracking-wider">
+                      {label}
+                    </label>
+                    <input
+                      type={type}
+                      id={name}
+                      name={name}
+                      autoComplete={autocomplete}
+                      required
+                      onChange={changeInputValueHandler}
+                      placeholder={placeholder}
+                      className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                    />
+                  </div>
+                ))}
+            </div>
+            {/* Radio buttons */}
+            {radioBtns && (
+              <div className="mx-0 mb-1 sm:mb-3">
+                <span className="pb-1 text-xs uppercase tracking-wider">{radioBtns?.label}</span>
+                <div className="flex flex-wrap">
+                  {radioBtns.radios.map(({ label }, index) => (
+                    <div key={`radio-btn-${index}`} className="mr-4 items-baseline">
+                      <input
+                        id={label}
+                        type="radio"
+                        name={label}
+                        value={`value${index}`}
+                        checked={radioBtnValue === `value${index}`}
+                        onChange={changeRadioBtnsHandler}
+                        className="cursor-pointer"
+                      />
+                      <label htmlFor={label} className="ml-2">
+                        {label}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {/* Textarea */}
+            {textarea && (
+              <div className={`mx-0 mb-1 sm:mb-4`}>
+                <label htmlFor={textarea.name} className="pb-1 text-xs uppercase tracking-wider">
+                  {textarea.label}
                 </label>
-                <input
-                  type={type}
-                  id={name}
-                  name={name}
-                  autoComplete={autocomplete}
-                  value={inputValues[index]}
-                  onChange={changeInputValueHandler}
-                  placeholder={placeholder}
+                <textarea
+                  id={textarea.name}
+                  name={textarea.name}
+                  cols={textarea.cols}
+                  rows={textarea.rows}
+                  required
+                  value={textareaValues}
+                  onChange={(e) => changeTextareaHandler(e)}
+                  placeholder={textarea.placeholder}
                   className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
                 />
               </div>
-            ))}
-        </div>
-        {/* Radio buttons */}
-        {radioBtns && (
-          <div className="mx-0 mb-1 sm:mb-3">
-            <span className="pb-1 text-xs uppercase tracking-wider">{radioBtns?.label}</span>
-            <div className="flex flex-wrap">
-              {radioBtns.radios.map(({ label }, index) => (
-                <div key={`radio-btn-${index}`} className="mr-4 items-baseline">
-                  <input
-                    id={label}
-                    type="radio"
-                    name={label}
-                    value={`value${index}`}
-                    checked={radioBtnValue === `value${index}`}
-                    onChange={changeRadioBtnsHandler}
-                    className="cursor-pointer"
-                  />
-                  <label htmlFor={label} className="ml-2">
-                    {label}
-                  </label>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-        {/* Textarea */}
-        {textarea && (
-          <div className={`mx-0 mb-1 sm:mb-4`}>
-            <label htmlFor={textarea.name} className="pb-1 text-xs uppercase tracking-wider">
-              {textarea.label}
-            </label>
-            <textarea
-              id={textarea.name}
-              name={textarea.name}
-              cols={textarea.cols}
-              rows={textarea.rows}
-              value={textareaValues}
-              onChange={(e) => changeTextareaHandler(e)}
-              placeholder={textarea.placeholder}
-              className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-            />
-          </div>
-        )}
-        {/* Checkboxes */}
-        {checkboxes && (
-          <div className="mx-0 mb-1 sm:mb-4">
-            {checkboxes.map(({ label }, index) => (
-              <div key={`checkbox-${index}`} className="mx-0 my-1 flex items-baseline">
-                <input
-                  id={label}
-                  type="checkbox"
-                  name={label}
-                  checked={checkedState[index]}
-                  onChange={() => changeCheckboxHandler(index)}
-                  className="cursor-pointer"
-                />
-                <label htmlFor={label} className="ml-2">
-                  {label}
-                </label>
+            )}
+            {/* Checkboxes */}
+            {checkboxes && (
+              <div className="mx-0 mb-1 sm:mb-4">
+                {checkboxes.map(({ label }, index) => (
+                  <div key={`checkbox-${index}`} className="mx-0 my-1 flex items-baseline">
+                    <input
+                      id={label}
+                      type="checkbox"
+                      name={label}
+                      checked={checkedState[index]}
+                      onChange={() => changeCheckboxHandler(index)}
+                      className="cursor-pointer"
+                    />
+                    <label htmlFor={label} className="ml-2">
+                      {label}
+                    </label>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
-        )}
-      </div>
-      {btn && (
-        <div
-          className={`${btnPosition === 'left' ? 'text-left' : btnPosition === 'right' ? 'text-right' : 'text-center'}`}
-        >
-          <button type={btn.type || 'button'} className="btn btn-primary sm:mb-0">
-            {btn.title}
-          </button>
-        </div>
+          {btn && (
+            <div
+              className={`${btnPosition === 'left' ? 'text-left' : btnPosition === 'right' ? 'text-right' : 'text-center'}`}
+            >
+              <button type={btn.type || 'button'} className="btn btn-primary sm:mb-0">
+                {btn.title}
+              </button>
+            </div>
+          )}
+        </form>
+      ) : (
+        <p className="text-center text-2xl font-bold mt-8">You Message has been sent our team will contact you soon!</p>
       )}
-    </form>
+      {submitError && <p className="text-center text-red-500">{submitError}</p>}
+      {loading && <p className="text-center">Loading...</p>}
+    </div>
   );
 };
 

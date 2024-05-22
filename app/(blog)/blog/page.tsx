@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Blog',
 };
 
-export default async function Home({}) {
+export default async function Home({ }) {
   const posts = await findLatestPosts();
   return (
     <section className="mx-auto max-w-3xl px-6 py-12 sm:px-6 sm:py-16 lg:py-20">

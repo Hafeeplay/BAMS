@@ -14,18 +14,16 @@ import Team from '~/components/widgets/Team';
 import CallToAction2 from '~/components/widgets/CallToAction2';
 import Contact from '~/components/widgets/Contact';
 import {
-  callToAction2Home,
   contactHome,
   contentHomeOne,
   contentHomeTwo,
-  faqs2Home,
   featuresHome,
   heroHome,
   pricingHome,
-  socialProofHome,
+  // socialProofHome,
   stepsHome,
   teamHome,
-  testimonialsHome,
+  // testimonialsHome,
 } from '~/shared/data/pages/home.data';
 
 export const metadata: Metadata = {
@@ -36,17 +34,17 @@ export default function Page() {
   return (
     <>
       <Hero {...heroHome} />
-      <SocialProof {...socialProofHome} />
+      {/* <SocialProof {...socialProofHome} /> */}
       <Features {...featuresHome} />
       <Content {...contentHomeOne} />
       <Content {...contentHomeTwo} />
       <Steps {...stepsHome} />
-      <Testimonials {...testimonialsHome} />
-      <FAQs2 {...faqs2Home} />
+      {/* <Testimonials {...testimonialsHome} /> */}
+      {/* <FAQs2 {...faqs2Home} /> */}
       <Pricing {...pricingHome} />
       <Team {...teamHome} />
       <Contact {...contactHome} />
-      <CallToAction2 {...callToAction2Home} />
+      {/* <CallToAction2 {...callToAction2Home} /> */}
     </>
   );
 }

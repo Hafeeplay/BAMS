@@ -9,11 +9,15 @@ import {
   IconClock,
   IconComponents,
   IconDownload,
+  IconDualScreen,
   IconListCheck,
   IconMail,
   IconMapPin,
   IconPhoneCall,
   IconRocket,
+  IconShoppingCart,
+  IconSpeakerphone,
+  IconTarget,
 } from '@tabler/icons-react';
 import {
   CallToActionProps,
@@ -28,45 +32,49 @@ import {
   TeamProps,
   TestimonialsProps,
 } from '../../types';
-import heroImg from '~/assets/images/hero.jpg';
+import heroImg from '~/assets/images/cash_counter_display.jpeg';
 import nextJsLogo from '~/assets/images/nextjs-logo.png';
 import reactLogo from '~/assets/images/react-logo.png';
 import tailwindCssLogo from '~/assets/images/tailwind-css-logo.png';
 import typescriptLogo from '~/assets/images/typescript-logo.png';
-import cameraFrontImg from '~/assets/images/camera-front.jpg';
-import cameraBackImg from '~/assets/images/camera-back.jpg';
+import displayImg from '~/assets/images/display_in_supermarket.jpeg';
+import lalit from '~/assets/images/lalit.jpeg';
+import akash from '~/assets/images/akash.jpeg';
+import manav from '~/assets/images/manav.jpeg';
+import tanishq from '~/assets/images/tanishq.jpeg';
+import hafeez from '~/assets/images/hafeez.jpeg';
+import display2Img from '~/assets/images/people_watching_display.jpg';
 import gasImg from '~/assets/images/gas.jpg';
+
 
 // Hero data on Home page *******************
 export const heroHome: HeroProps = {
   title: (
     <>
-      Free template for <span className="hidden md:inline">starts a website using</span> <span>Next.js</span> +{' '}
-      <span className="sm:whitespace-nowrap">Tailwind CSS</span>
+      Change your way of <span className="hidden md:inline">marketing using</span> <span>BAMS</span> <span className="sm:whitespace-nowrap">India</span>
     </>
   ),
   subtitle: (
     <>
       <span className="hidden md:inline">
         <span className="font-semibold underline decoration-primary-600 decoration-wavy decoration-1 underline-offset-2">
-          TailNext
+          BAMS
         </span>{' '}
-        is a production ready template to start your new website using <em>Next.js</em> + <em>Tailwind CSS</em>.
+        is a game-changer in the advertising industry, poised to disrupt the landscape. Unlike traditional TV ads, which often fall short in delivering satisfactory returns on investment,
       </span>{' '}
-      It has been designed following Best Practices, SEO, Accessibility, Dark Mode, great Page Speed, image
-      optimization.
+      BAMS offers a fresh and innovative approach. Our platform maximizes ROI for FMCG companies, setting a new standard in advertising effectiveness.
     </>
   ),
   callToAction: {
-    text: 'Get template',
-    href: 'https://github.com/onwidget/tailnext',
-    icon: IconDownload,
+    text: 'Get A Demo',
+    href: '#contact-on-home',
+    icon: IconPhoneCall,
     targetBlank: true,
   },
-  callToAction2: {
-    text: 'Learn more',
-    href: '/',
-  },
+  // callToAction2: {
+  //   text: 'Learn more',
+  //   href: '/',
+  // },
   image: {
     src: heroImg,
     alt: 'Hero TailNext',
@@ -109,48 +117,48 @@ export const featuresHome: FeaturesProps = {
   header: {
     title: (
       <>
-        What you get with <span className="whitespace-nowrap">TailNext</span>
+        Why youshould Partner with <span className="whitespace-nowrap">BAMS ?</span>
       </>
     ),
     subtitle:
-      "Elevating Your Digital Presence: Discover the Synergies Unleashed in Our Platform's Core Strengths, from Seamless Integration to Open Collaboration.",
+      "BAMS: Revolutionizing Your Advertising Strategy. Unlock the Power of Seamless Integration and Open Collaboration to Maximize Your Digital Presence.",
     tagline: 'Features',
   },
   items: [
     {
-      title: 'Next.Js + Tailwind CSS Integration',
+      title: 'Strategic Placement',
       description:
-        'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-      icon: IconBrandTailwind,
+        'Displays in grocery stores are strategically placed in high-traffic areas, such as near the entrance, aisles, or checkout counters, to maximize visibility and exposure to shoppers.',
+      icon: IconTarget,
       callToAction: {
         text: 'Discover now',
         href: '/',
       },
     },
     {
-      title: 'Ready-to-use Components',
+      title: 'Promotional Messaging',
       description:
-        'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-      icon: IconComponents,
+        'Displays often include promotional messaging, such as discounts, special offers, or new product launches, to entice shoppers and encourage impulse purchases.',
+      icon: IconSpeakerphone,
       callToAction: {
         text: 'Discover now',
         href: '/',
       },
     },
     {
-      title: 'Best Practices',
+      title: 'Influence on Purchase Decisions',
       description:
-        'By prioritizing maintainability and scalability through coding standards and design principles, your website stays robust and efficient.',
-      icon: IconListCheck,
+        'Studies have shown that displays in grocery stores can significantly influence shoppers\' purchase decisions. ',
+      icon: IconShoppingCart,
       callToAction: {
         text: 'Discover now',
         href: '/',
       },
     },
     {
-      title: 'Excellent Page Speed',
+      title: 'Reinforcement of Brand Awareness',
       description:
-        'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+        'Well-executed displays not only promote products but also enhance brand recall, leaving a lasting impression and boosting future purchases.',
       icon: IconRocket,
       callToAction: {
         text: 'Discover now',
@@ -158,19 +166,19 @@ export const featuresHome: FeaturesProps = {
       },
     },
     {
-      title: 'Search Engine Optimization (SEO)',
+      title: 'Tailored Display ',
       description:
-        "Boost online visibility with our SEO-friendly website. Effective strategies and practices enhance your website's search engine ranking, making it easier for users to find your content.",
-      icon: IconArrowsRightLeft,
+        "Utilize 32-inch to 55-inch ad displays customized to fit each outlet seamlessly, enhancing visual appeal of your ad.",
+      icon: IconDualScreen,
       callToAction: {
         text: 'Discover now',
         href: '/',
       },
     },
     {
-      title: 'Open to new ideas and contributions',
+      title: 'Demographic Insights',
       description:
-        'We welcome new ideas and contributions to our platform. Whether you have feature suggestions, want to contribute code, or share insights, our platform is open for collaboration.',
+        'Integrated cameras and sensors gather valuable demographic data on viewers, enabling precise targeting and optimization of ad campaigns',
       icon: IconBulb,
       callToAction: {
         text: 'Discover now',
@@ -185,32 +193,37 @@ export const contentHomeOne: ContentProps = {
   id: 'contentOne-on-home-one',
   hasBackground: true,
   header: {
-    title: 'Aliquip definiebas ad est',
-    subtitle: 'Quando cetero his ne, eum admodum sapientem ut',
+    title: 'How it works',
+    subtitle: 'Utilizing strategic placement, targeted campaigns, seamless integration, data-driven insights, collaborative customization, flexible options, continuous innovation, and transparent reporting to optimize advertising effectiveness.',
     tagline: 'Content',
   },
   content:
-    'Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.',
+    'Unlock the power of real-time insights with our BAMS solution, driving efficiency and informed decision-making in your business.',
   items: [
     {
-      title: 'Per ei quaeque sensibus',
+      title: 'Book no of screen for advertisement',
       description:
-        'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
+        'Ad will be run for 15 sec in a loop of 4 mins everyday 10 hours in store.',
     },
     {
-      title: 'Cu imperdiet posidonium sed',
+      title: 'publish your advertisement',
       description:
-        'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
+        'Several engagement ads will create brand awareness.',
     },
     {
-      title: 'Nulla omittam sadipscing mel ne',
+      title: 'Insights on advertisement',
       description:
-        'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
+        'Ad analysis to address more category expansion.',
+    },
+    {
+      title: 'Re-new Service',
+      description:
+        'Booking further advertisement slot as per the availability.',
     },
   ],
   image: {
-    src: cameraFrontImg,
-    alt: 'Colorful Image',
+    src: displayImg,
+    alt: 'Supermarket Display Image',
   },
   isReversed: false,
   isAfterContent: false,
@@ -221,29 +234,29 @@ export const contentHomeTwo: ContentProps = {
   id: 'contentOne-on-home-two',
   hasBackground: true,
   content:
-    'Per odio fabellas consulatu cu. Utroque detracto mel ea, quo te latine theophrastus. Ea his tale nib dissentias, mei exerci tamquam euripidis cu.',
+    'We offer a myriad of benefits, each designed to enhance your advertising experience. From strategic placement in high-traffic areas to targeted campaigns tailored to specific demographics and locations, we ensure maximum visibility and impact for your brand.',
   items: [
     {
-      title: 'Per ei quaeque sensibus',
+      title: 'Strategic placement in high-traffic areas',
     },
     {
-      title: 'Cu imperdiet posidonium sed',
+      title: 'Targeted campaigns tailored to specific demographics and locations',
     },
     {
-      title: 'Nulla omittam sadipscing mel ne',
+      title: 'Seamless integration with existing advertising infrastructure',
     },
     {
-      title: 'Per ei quaeque sensibus',
+      title: 'Real-time optimization of strategies through data-driven insights',
     },
     {
-      title: 'Cu imperdiet posidonium sed',
+      title: 'Collaborative customization to align with brand objectives',
     },
     {
-      title: 'Nulla omittam sadipscing mel ne',
+      title: 'Flexible options for businesses of all sizes',
     },
   ],
   image: {
-    src: cameraBackImg,
+    src: display2Img,
     alt: 'Colorful Image',
   },
   isReversed: true,
@@ -261,25 +274,25 @@ export const stepsHome: StepsProps = {
     alt: 'Steps image',
   },
   header: {
-    title: 'Sed ac magna sit amet risus tristique interdum.',
+    title: 'Start hosting your ads effortlessly with us today!',
   },
   items: [
     {
       title: 'Step 1',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.',
+        'Contact our sales team to kick-start your advertising journey. Our team will promptly reach out to gather the necessary details and get you started.',
       icon: IconArrowDown,
     },
     {
       title: 'Step 2',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
+        'Choose a subscription plan and get started. Your account will be created promptly to begin your advertising journey.',
       icon: IconArrowDown,
     },
     {
       title: 'Step 3',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
+        'Now you \'re ready to start hosting your ads! Select your zones, choose the number of displays, and more to customize your advertising campaign.',
       icon: IconArrowDown,
     },
     {
@@ -288,116 +301,116 @@ export const stepsHome: StepsProps = {
   ],
 };
 
-// Testimonials data on Home page *******************
-export const testimonialsHome: TestimonialsProps = {
-  id: 'testimonials-on-home',
-  hasBackground: true,
-  header: {
-    title: 'What our customers say about us',
-    subtitle:
-      'Etiam sed odio et dolor auctor gravida. Curabitur tincidunt elit non risus pharetra sodales. Etiam sit amet mattis massa.',
-  },
-  testimonials: [
-    {
-      name: 'Tayla Kirsten',
-      job: 'Marketing Manager',
-      testimonial: `I'm impressed by the speed and performance of these templates. My website now loads in the blink of an eye, significantly enhancing my visitors' experience. Thanks to TailNext, my online business is thriving.`,
-      image: {
-        src: 'https://images.unsplash.com/photo-1619734086067-24bf8889ea7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Tayla Kirsten',
-      },
-      href: '/',
-    },
-    {
-      name: 'Silver Jordan',
-      job: 'Senior Marketer',
-      testimonial: `I had never found it so easy to customize a website. TailNext's templates are incredibly flexible, and with Tailwind CSS, I've managed to give my website the look and feel I always wanted. Highly recommended!`,
-      image: {
-        src: 'https://images.unsplash.com/photo-1565049786474-1dea82a8b995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Silver Jordan',
-      },
-      href: '/',
-    },
-    {
-      name: 'Kelsey Arden',
-      job: 'Co-Founder & CEO',
-      testimonial: `As a beginner in web development, I really needed clear guidance. Tailnext made it possible. I was able to install and customize my website seamlessly, and I'm thrilled with the results!`,
-      image: {
-        src: 'https://images.unsplash.com/photo-1659057106920-da022cfbc0cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Kelsey Arden',
-      },
-      href: '/',
-    },
-    {
-      name: 'Sarah Johnson',
-      job: 'Business Owner',
-      testimonial: `They've not only saved me a ton of time but have also made my websites look incredibly professional. The level of detail and thought that went into designing these templates is truly impressive.`,
-      image: {
-        src: 'https://images.unsplash.com/photo-1572417884940-c24659be6068?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Sarah Johnson',
-      },
-      href: '/',
-    },
-    {
-      name: 'Keith Young',
-      job: 'Freelance Developer',
-      testimonial: `The clean code and integration with Next.js make my projects a breeze. Plus, the responsive design ensures that my clients' websites look amazing on any device. These templates have become my secret weapon for success!`,
-      image: {
-        src: 'https://images.unsplash.com/photo-1694287877106-ee22f764aef1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Keith Young',
-      },
-      href: '/',
-    },
-    {
-      name: 'Lisa Gordon',
-      job: 'Project Manager',
-      testimonial: `Their templates are not only stunning but also user-friendly. The support I received from their community has been exceptional. I'm proud to say that I've built my dream website with TailNext.`,
-      image: {
-        src: 'https://images.unsplash.com/photo-1665984867752-6370ab5ae35e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Lisa Gordon',
-      },
-      href: '/',
-    },
-  ],
-};
+// // Testimonials data on Home page *******************
+// export const testimonialsHome: TestimonialsProps = {
+//   id: 'testimonials-on-home',
+//   hasBackground: true,
+//   header: {
+//     title: 'What our shopkeepers and customers say about us',
+//     subtitle:
+//       'Customer Testimonials: Hear What Our Clients Have to Say!',
+//   },
+//   testimonials: [
+//     {
+//       name: 'Rajesh Patel',
+//       job: 'Marketing ManagerStore Owner - Smart Supermarket',
+//       testimonial: `Since partnering with BAMS, I've seen a significant increase in foot traffic and sales at my store. Their displays strategically placed near checkout counters have caught the attention of shoppers, resulting in higher impulse purchases.`,
+//       image: {
+//         src: 'https://images.unsplash.com/photo-1619734086067-24bf8889ea7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+//         alt: 'Rajesh Patel',
+//       },
+//       href: '/',
+//     },
+//     {
+//       name: 'Priya Sharma',
+//       job: 'Store Owner - Ratnadeep Supermarket',
+//       testimonial: `BAMS has been a game-changer for my business. Their digital displays have transformed the shopping experience for my customers, driving brand awareness and boosting sales.`,
+//       image: {
+//         src: 'https://images.unsplash.com/photo-1565049786474-1dea82a8b995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+//         alt: 'Priya Sharma',
+//       },
+//       href: '/',
+//     },
+//     {
+//       name: 'Amit Kumar',
+//       job: 'Marketing Manager - Unilever',
+//       testimonial: `Partnering with BAMS has allowed us to reach our target audience effectively. Their innovative approach to advertising has strengthened our brand presence in the market.`,
+//       image: {
+//         src: 'https://images.unsplash.com/photo-1659057106920-da022cfbc0cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+//         alt: 'Amit Kumar',
+//       },
+//       href: '/',
+//     },
+//     {
+//       name: 'Rahul Singh',
+//       job: 'Marketing Manager - Milton',
+//       testimonial: `We've seen a remarkable increase in brand visibility and product sales since partnering with BAMS. Their displays have effectively communicated our brand message to our customers.`,
+//       image: {
+//         src: 'https://images.unsplash.com/photo-1572417884940-c24659be6068?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+//         alt: 'Rahul Singh',
+//       },
+//       href: '/',
+//     },
+//     {
+//       name: 'Sainath',
+//       job: 'Rajiv Kirana Store',
+//       testimonial: `BAMS' displays have been instrumental in driving brand engagement for Dove. Their strategic placement and captivating content have resonated well with our target customers.`,
+//       image: {
+//         src: 'https://images.unsplash.com/photo-1694287877106-ee22f764aef1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+//         alt: 'Sainath',
+//       },
+//       href: '/',
+//     },
+//     {
+//       name: 'Neha Gupta',
+//       job: 'Marketing Manager - Dove',
+//       testimonial: `BAMS' displays have been instrumental in driving brand engagement for Dove. Their strategic placement and captivating content have resonated well with our target customers.`,
+//       image: {
+//         src: 'https://images.unsplash.com/photo-1665984867752-6370ab5ae35e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+//         alt: 'Neha Gupta',
+//       },
+//       href: '/',
+//     },
+//   ],
+// };
 
-// FAQS data on Home page *******************
-export const faqs2Home: FAQsProps = {
-  id: 'faqsTwo-on-home',
-  hasBackground: false,
-  header: {
-    title: 'Frequently Asked Questions',
-    subtitle:
-      'Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar.',
-    tagline: 'FAQS',
-  },
-  items: [
-    {
-      title: 'What do I need to start?',
-      description: `Nunc mollis tempor quam, non fringilla elit sagittis in. Nullam vitae consectetur mi, a elementum arcu. Sed laoreet, ipsum et vehicula dignissim, leo orci pretium sem, ac condimentum tellus est quis ligula.`,
-    },
-    {
-      title: 'How to install the NextJS + Tailwind CSS template?',
-      description: `Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eleifend vestibulum nisl in iaculis. Mauris dictum ac purus vestibulum auctor. Praesent imperdiet lectus et massa faucibus, quis viverra massa rhoncus.`,
-    },
-    {
-      title: "What's something that you completely don't understand?",
-      description: `Mauris vitae eros a dui varius luctus. Suspendisse rutrum, sapien nec blandit bibendum, justo sapien sollicitudin erat, id aliquam sapien purus quis leo. Aliquam vulputate vestibulum consectetur.`,
-    },
-    {
-      title: "What's an example of when you changed your mind?",
-      description: `Nunc dapibus lacinia ipsum ut elementum. Integer in pretium sapien. Ut pretium nisl mauris, ut rutrum justo condimentum id. Etiam aliquet, arcu at iaculis laoreet, est arcu egestas sapien, eget sollicitudin odio orci et nunc.`,
-    },
-    {
-      title: 'What is something that you would really like to try again?',
-      description: `Duis in maximus mauris, id eleifend mauris. Nam a fringilla arcu. Curabitur convallis, tellus non aliquet rhoncus, lacus massa auctor eros, in interdum lectus augue sed augue. Fusce tempor ex id faucibus efficitur.`,
-    },
-    {
-      title: 'If you could only ask one question to each person you meet, what would that question be?',
-      description: `Nullam imperdiet sapien tincidunt erat dapibus faucibus. Vestibulum a sem nec lorem imperdiet scelerisque non sed lacus. Ut pulvinar id diam vitae auctor. Nam tempus, neque et elementum consectetur, ex ipsum pulvinar risus, vel sodales ligula tortor eu eros.`,
-    },
-  ],
-};
+// // FAQS data on Home page *******************
+// export const faqs2Home: FAQsProps = {
+//   id: 'faqsTwo-on-home',
+//   hasBackground: false,
+//   header: {
+//     title: 'Frequently Asked Questions',
+//     subtitle:
+//       'Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar.',
+//     tagline: 'FAQS',
+//   },
+//   items: [
+//     {
+//       title: 'What do I need to start?',
+//       description: `Nunc mollis tempor quam, non fringilla elit sagittis in. Nullam vitae consectetur mi, a elementum arcu. Sed laoreet, ipsum et vehicula dignissim, leo orci pretium sem, ac condimentum tellus est quis ligula.`,
+//     },
+//     {
+//       title: 'How to install the NextJS + Tailwind CSS template?',
+//       description: `Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eleifend vestibulum nisl in iaculis. Mauris dictum ac purus vestibulum auctor. Praesent imperdiet lectus et massa faucibus, quis viverra massa rhoncus.`,
+//     },
+//     {
+//       title: "What's something that you completely don't understand?",
+//       description: `Mauris vitae eros a dui varius luctus. Suspendisse rutrum, sapien nec blandit bibendum, justo sapien sollicitudin erat, id aliquam sapien purus quis leo. Aliquam vulputate vestibulum consectetur.`,
+//     },
+//     {
+//       title: "What's an example of when you changed your mind?",
+//       description: `Nunc dapibus lacinia ipsum ut elementum. Integer in pretium sapien. Ut pretium nisl mauris, ut rutrum justo condimentum id. Etiam aliquet, arcu at iaculis laoreet, est arcu egestas sapien, eget sollicitudin odio orci et nunc.`,
+//     },
+//     {
+//       title: 'What is something that you would really like to try again?',
+//       description: `Duis in maximus mauris, id eleifend mauris. Nam a fringilla arcu. Curabitur convallis, tellus non aliquet rhoncus, lacus massa auctor eros, in interdum lectus augue sed augue. Fusce tempor ex id faucibus efficitur.`,
+//     },
+//     {
+//       title: 'If you could only ask one question to each person you meet, what would that question be?',
+//       description: `Nullam imperdiet sapien tincidunt erat dapibus faucibus. Vestibulum a sem nec lorem imperdiet scelerisque non sed lacus. Ut pulvinar id diam vitae auctor. Nam tempus, neque et elementum consectetur, ex ipsum pulvinar risus, vel sodales ligula tortor eu eros.`,
+//     },
+//   ],
+// };
 
 // Pricing data on Home page *******************
 export const pricingHome: PricingProps = {
@@ -412,50 +425,50 @@ export const pricingHome: PricingProps = {
   prices: [
     {
       title: 'basic',
-      price: 29,
-      period: 'per month',
+      price: 1.25,
+      period: 'Lakh per Month',
       items: [
         {
-          description: 'Etiam in libero, et volutpat',
+          description: '1 Creative Per Month',
         },
         {
-          description: 'Aenean ac nunc dolor tristique',
+          description: 'Demographic Information',
         },
         {
-          description: 'Cras scelerisque accumsan lib',
+          description: 'ad\'s over 50" to 60" inch FHD Displays',
         },
         {
-          description: 'In hac habitasse',
+          description: 'Access to 50 Display',
         },
       ],
       callToAction: {
         targetBlank: true,
-        text: 'Free 7-day trial',
+        text: 'Subscribe Now',
         href: '/',
       },
       hasRibbon: false,
     },
     {
       title: 'standard',
-      price: 69,
-      period: 'per month',
+      price: 1.75,
+      period: 'lakh per month',
       items: [
         {
-          description: 'Proin vel laoreet',
+          description: '3 Creative Per Month',
         },
         {
-          description: 'Ut efficitur egestas',
+          description: 'Demographic Information',
         },
         {
-          description: 'Pellentesque ut nibh',
+          description: 'ad\'s over 50" to 60" inch FHD Displays',
         },
         {
-          description: 'Donec fringilla sem',
+          description: 'Access to 50 Display',
         },
       ],
       callToAction: {
         targetBlank: true,
-        text: 'Free 15-day trial',
+        text: 'Subscribe Now',
         href: '/',
       },
       hasRibbon: true,
@@ -463,25 +476,25 @@ export const pricingHome: PricingProps = {
     },
     {
       title: 'premium',
-      price: 199,
+      price: 2.25,
       period: 'per month',
       items: [
         {
-          description: 'Curabitur suscipit risus',
+          description: '5 Creative Per Month',
         },
         {
-          description: 'Aliquam blandit malesuada',
+          description: 'Demographic Information',
         },
         {
-          description: 'Suspendisse sit amet',
+          description: 'ad\'s over 50" to 60" inch FHD Displays',
         },
         {
-          description: 'Suspendisse auctor dui',
+          description: 'Access to 50 Display',
         },
       ],
       callToAction: {
         targetBlank: true,
-        text: 'Free 30-day trial',
+        text: 'Subscribe Now',
         href: '/',
       },
       hasRibbon: false,
@@ -496,16 +509,16 @@ export const teamHome: TeamProps = {
   header: {
     title: 'Team Members',
     subtitle:
-      'Suspendisse in dui nibh. Donec enim leo, sodales et egestas id, malesuada non diam. Sed dapibus velit et mauris condimentum, vel imperdiet erat egestas.',
+      'Get to know the passionate individuals driving BAMS success below.',
     // tagline: 'Team',
   },
   teams: [
     {
-      name: 'Cindy Belcher',
-      occupation: 'SEO Consultant',
+      name: 'Lalit Raj',
+      occupation: 'Co-Founder',
       image: {
-        src: 'https://images.unsplash.com/photo-1637858868799-7f26a0640eb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Cindy Belcher',
+        src: lalit,
+        alt: 'Lalit Raj',
       },
       items: [
         {
@@ -526,11 +539,11 @@ export const teamHome: TeamProps = {
       ],
     },
     {
-      name: 'Toby Foster',
-      occupation: 'Marketing Tech',
+      name: 'Akash Bubna',
+      occupation: 'Co-Founder',
       image: {
-        src: 'https://images.unsplash.com/photo-1614583224978-f05ce51ef5fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2172&q=80',
-        alt: 'Toby Foster',
+        src: akash,
+        alt: 'Akash Bubna',
       },
       items: [
         {
@@ -551,10 +564,10 @@ export const teamHome: TeamProps = {
       ],
     },
     {
-      name: 'Clark Bourne',
-      occupation: 'Content Manager',
+      name: 'Manav Malaviya',
+      occupation: 'Tech Team',
       image: {
-        src: 'https://images.unsplash.com/photo-1639628735078-ed2f038a193e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80',
+        src: manav,
         alt: 'Clark Bourne',
       },
       items: [
@@ -576,11 +589,36 @@ export const teamHome: TeamProps = {
       ],
     },
     {
-      name: 'Bella Chase',
-      occupation: 'UX Designer',
+      name: 'Tanishq Kumar',
+      occupation: 'Tech Team',
       image: {
-        src: 'https://images.unsplash.com/photo-1628260412297-a3377e45006f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80',
-        alt: 'Bella Chase',
+        src: tanishq,
+        alt: 'Tanisq Kumar',
+      },
+      items: [
+        {
+          title: 'Know more on Twitter',
+          icon: IconBrandTwitter,
+          href: '#',
+        },
+        {
+          title: 'Know more on Linkedin',
+          icon: IconBrandLinkedin,
+          href: '#',
+        },
+        {
+          title: 'Contact by email',
+          icon: IconMail,
+          href: '#',
+        },
+      ],
+    },
+    {
+      name: 'Shaik Abdul Hafeez',
+      occupation: 'Tech Team',
+      image: {
+        src: hafeez,
+        alt: 'Shaik Abdul Hafeez',
       },
       items: [
         {
@@ -605,23 +643,24 @@ export const teamHome: TeamProps = {
 
 // Contact data on Home page *******************
 export const contactHome: ContactProps = {
+  id: 'contact-on-home',
   hasBackground: true,
   header: {
     title: 'Get in Touch',
-    subtitle: 'In hac habitasse platea dictumst',
+    subtitle: 'Are you ready to level up your business ? Join Us Now',
     tagline: 'Contact',
   },
   content:
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut scelerisque sagittis ante, ac tincidunt sem venenatis ut.',
+    'Ready to revolutionize your advertising strategy? Get in touch with our team today to explore how BAMS can elevate your brand\'s visibility and drive results.',
   items: [
     {
       title: 'Our Address',
-      description: ['1230 Maecenas Street Donec Road', 'New York, EEUU'],
+      description: ['530032 Gachibowli', 'Hyderabad, India'],
       icon: IconMapPin,
     },
     {
       title: 'Contact',
-      description: ['Mobile: +1 (123) 456-7890', 'Mail: tailnext@gmail.com'],
+      description: ['Mobile: +91 9954953008', 'Mail: bamsadvmedia@gmail.com'],
       icon: IconPhoneCall,
     },
     {
@@ -659,43 +698,43 @@ export const contactHome: ContactProps = {
   },
 };
 
-// CallToAction data *******************
-export const callToAction2Home: CallToActionProps = {
-  title: 'Next.js + Tailwind CSS',
-  subtitle:
-    'Aliquam sodales porttitor lacus ac tristique. Etiam posuere elit at leo feugiat sodales. Sed ac mauris quis sem tempor condimentum non at metus.',
-  callToAction: {
-    text: 'Get template',
-    href: 'https://github.com/onwidget/tailnext',
-    icon: IconDownload,
-  },
-  items: [
-    {
-      title: 'Get template',
-      description: 'Aliquam sodales est lectus, quis.',
-      href: 'https://github.com/onwidget/tailnext',
-    },
-    {
-      title: 'Learn more',
-      description: 'Class aptent taciti sociosqu ad litora torquent per conubia.',
-      href: '/',
-    },
-    {
-      title: 'Subscribe',
-      description: 'Morbi orci nunc, euismod ac dui id, convallis.',
-      form: {
-        icon: IconMail,
-        input: {
-          type: 'email',
-          name: 'email',
-          autocomplete: 'email',
-          placeholder: 'Enter your email address',
-        },
-        btn: {
-          title: 'Subscribe',
-          type: 'submit',
-        },
-      },
-    },
-  ],
-};
+// // CallToAction data *******************
+// export const callToAction2Home: CallToActionProps = {
+//   title: 'Next.js + Tailwind CSS',
+//   subtitle:
+//     'Aliquam sodales porttitor lacus ac tristique. Etiam posuere elit at leo feugiat sodales. Sed ac mauris quis sem tempor condimentum non at metus.',
+//   callToAction: {
+//     text: 'Get template',
+//     href: 'https://github.com/onwidget/tailnext',
+//     icon: IconDownload,
+//   },
+//   items: [
+//     {
+//       title: 'Get template',
+//       description: 'Aliquam sodales est lectus, quis.',
+//       href: 'https://github.com/onwidget/tailnext',
+//     },
+//     {
+//       title: 'Learn more',
+//       description: 'Class aptent taciti sociosqu ad litora torquent per conubia.',
+//       href: '/',
+//     },
+//     {
+//       title: 'Subscribe',
+//       description: 'Morbi orci nunc, euismod ac dui id, convallis.',
+//       form: {
+//         icon: IconMail,
+//         input: {
+//           type: 'email',
+//           name: 'email',
+//           autocomplete: 'email',
+//           placeholder: 'Enter your email address',
+//         },
+//         btn: {
+//           title: 'Subscribe',
+//           type: 'submit',
+//         },
+//       },
+//     },
+//   ],
+// };

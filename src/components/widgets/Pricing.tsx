@@ -37,7 +37,7 @@ const Pricing = ({ header, prices, id, hasBackground = false }: PricingProps) =>
                       )}
                       <div className="my-8">
                         <div className="flex items-center justify-center text-center mb-1">
-                          <span className="text-5xl">$</span>
+                          <span className="text-5xl">₹</span>
                           <span className="text-6xl font-extrabold">{price}</span>
                         </div>
                         <span className="text-base leading-6 lowercase text-gray-600 dark:text-slate-400">
